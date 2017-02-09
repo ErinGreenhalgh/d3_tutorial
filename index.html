@@ -7,7 +7,17 @@
   </head>
   <body>
     <script>
-      d3.select("body").append("p").text("Hello");
+      var canvas = d3.select("body")
+                    .append("svg")
+                    .attr("width", 500)
+                    .attr("height", 500);
+      var circle = canvas.append("circle")
+                         .attr("cx", 250) //cx is center, horizontal axis
+                         .attr("cy", 250) //cy is center, vertical
+                         .attr("r", 50) // r = radius
+                         .attr("fill", "magenta") //color is added with the fill attribute
+
+        // when styling svg elements, use attr instead of style
     </script>
 
   </body>
