@@ -7,27 +7,18 @@
   </head>
   <body>
     <script>
+      var data = [20, 40, 50];
       var canvas = d3.select("body")
                     .append("svg")
                     .attr("width", 500)
                     .attr("height", 500);
-      var circle = canvas.append("circle")
-                         .attr("cx", 250) //cx is center, horizontal axis
-                         .attr("cy", 250) //cy is center, vertical
-                         .attr("r", 50) // r = radius
-                         .attr("fill", "magenta") //color is added with the fill attribute
-      var rect = canvas.append("rect")
-                       .attr("width", 100)
-                       .attr("height", 50) //if no coordinates, given, starts drawing in the upper right hand corner
-    var line = canvas.append("line")
-                     .attr("x1", 0) //first x coord
-                     .attr("y1", 100) //first y coord
-                     .attr("x2", 400) //second x coor
-                     .attr("y2", 400) //second y coord
-                     .attr("stroke", "peru") //stroke defines the color
-                     .attr("stroke-width", 10)
 
-        // when styling svg elements, use attr instead of style
+      var bars = canvas.selectAll("rect") //weird b/c we don't have rects yet; returns an empty selection here
+                       .data(data) //specify where data is coming from, we're binding it to the empty selection
+                       .enter() //returns placeholders for each data element for which there are no DOM elements yet
+                       //in this case, all 3 of our data points
+                       .append("rect") //for each data element, append a rect
+                       .attr("width", function(d) { return d; })//width is a function of the data; d is each data element
     </script>
 
   </body>
