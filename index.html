@@ -16,6 +16,16 @@
                          .attr("cy", 250) //cy is center, vertical
                          .attr("r", 50) // r = radius
                          .attr("fill", "magenta") //color is added with the fill attribute
+      var rect = canvas.append("rect")
+                       .attr("width", 100)
+                       .attr("height", 50) //if no coordinates, given, starts drawing in the upper right hand corner
+    var line = canvas.append("line")
+                     .attr("x1", 0) //first x coord
+                     .attr("y1", 100) //first y coord
+                     .attr("x2", 400) //second x coor
+                     .attr("y2", 400) //second y coord
+                     .attr("stroke", "peru") //stroke defines the color
+                     .attr("stroke-width", 10)
 
         // when styling svg elements, use attr instead of style
     </script>
